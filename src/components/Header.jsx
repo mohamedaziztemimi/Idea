@@ -8,7 +8,7 @@ import Search from "./Search";
 const Header = () => {
     return (
         <>
-            <div className=" h-20 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
+            <div className=" h-20 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative bg-gradient-to-t ">
                {/** Mobile */}
                <div className="h-20 flex items-center justify-between md:hidden">
                     

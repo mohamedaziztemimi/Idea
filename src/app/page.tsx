@@ -1,9 +1,9 @@
-
+import Slider from "@/components/Slider"
 
 const Home = () => {
   return (
    <div>
-    home page
+    <Slider/>
    </div>
 
    
