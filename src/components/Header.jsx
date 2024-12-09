@@ -8,20 +8,20 @@ import Search from "./Search";
 const Header = () => {
     return (
         <>
-            <div className=" h-20 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative bg-gradient-to-t ">
+            <div className=" h-20 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64  z-20 fixed  top-0 left-0 right-0 bg-white rounded-b-xl ">
                {/** Mobile */}
                <div className="h-20 flex items-center justify-between md:hidden">
                     
-                    <Link  className="flex gap-4 border-none text-2xl" href={"/"}> <Image className=" tracking-wider  "src="/brain.png" width={30} height={30} alt=""/>IDEA</Link>
+                    <Link  className="flex gap-4 border-none text-2xl" href={"/"}>  <Image className="animate-bounce"src="/brain.png" width={30} height={30} alt=""/>IDEA</Link>
                     <Menu></Menu >
-
+             
                </div>
             {/** Bigger screens */}
-            <div className="hidden md:flex justify-between items-center gap-8 h-full">
+            <div className="hidden md:flex justify-between items-center gap-8 h-full   ">
                     <div className="w-1/3 xl:w-1/2 flex gap-8 ">
                         
                         <Link  href={"/"} className="flex justify-center items-center gap-3 h-max">
-                           <Image src="/brain.png" width={30} height={30} alt=""/>
+                           <Image className="" src="/brain.png" width={30} height={30} alt=""/>
                           <div className="text-2xl tracking-wider ">IDEA</div>
                         </Link>
                        

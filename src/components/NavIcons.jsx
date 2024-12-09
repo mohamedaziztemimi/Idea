@@ -1,9 +1,10 @@
 "use client"
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState , useRef ,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import CartModel from "./CartModel"
+import useCloseModal from '@/hooks/useCloseModal'
 
 const NavIcons=()=>{
      const [profile, setProfile] = useState(false);
@@ -20,11 +21,15 @@ const NavIcons=()=>{
         }
 
      }
+     const profileRef = useRef(null)
+     useCloseModal(profileRef,()=>{
+        setProfile(false)
+    })
     return(
         <div className="flex items-center gap-3 2xl:gap-6 relative  ">
            
             {profile && 
-                <div className="absolute -left-2 top-12 bg-gray-50 p-3  rounded-md text-sm z-20 shadow-[0_4px_6px_rgba(0,0,0,0.1),0_1px_3px_rgba(0,0,0,0.06)] ">
+                <div ref={profileRef} className="absolute -left-2 top-12 bg-gray-50 p-3  rounded-md text-sm z-20 shadow-[0_4px_6px_rgba(0,0,0,0.1),0_1px_3px_rgba(0,0,0,0.06)] ">
                     <Link  href="/profile"> Profile </Link>
                     <Link href="/logout"> Logout </Link>
                 </div>
@@ -38,8 +43,8 @@ const NavIcons=()=>{
                 <div className="bg-red-400 absolute text-white rounded-full text-xs -top-2 -right-2 w-4 h-4 flex justify-center items-center ">1</div>
            </div>
 
+           {cartModel && <CartModel open={cartModel} setOpen={setCartModel}/>
 
-           {cartModel && <CartModel/>
 
            }
         </div>

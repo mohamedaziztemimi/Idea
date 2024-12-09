@@ -82,7 +82,7 @@ const Slider = () => {
     }, [maxIndex]);
 
     const Card = ({ idea }) => (
-        <div className="w-80   mx-4 relative group transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl shadow-gray-500/40 ">
+        <div className="w-80  z-0  mx-4 relative group transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl shadow-gray-500/40 ">
             <div className="rounded-lg overflow-hidden shadow-lg">
                 <Image
                     src={idea.image}

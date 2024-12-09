@@ -1,8 +1,17 @@
-import React from 'react'
+"use Client"
+import React, { useRef ,useEffect } from 'react'
 import Image from 'next/image'
-const CartModel = () => {
+import useCloseModal from '@/hooks/useCloseModal'
+const CartModel = ({open , setOpen}) => {
+   
+    const modelRef = useRef(null)
+     useCloseModal(modelRef,()=>{
+        setOpen(false)
+    })
+  
+    
   return (
-    <div className='absolute  top-10 right-0 bg-gray-50 p-3  rounded-md z-20 shadow-[0_4px_6px_rgba(0,0,0,0.1),0_1px_3px_rgba(0,0,0,0.06)] w-max flex flex-col gap-4'>
+    <div className='absolute  top-10 right-0 bg-gray-50 p-3  rounded-md  shadow-[0_4px_6px_rgba(0,0,0,0.1),0_1px_3px_rgba(0,0,0,0.06)] w-max flex flex-col gap-4 z-20' ref={modelRef}  >
            {/** top section  */}
            
             <div className='text-l font-semibold text-gray-500 '>
